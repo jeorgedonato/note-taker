@@ -13,6 +13,24 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/index.html'))
+});
+
+app.get('/notes', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/notes.html'))
+});
+
+app.post('/notes', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/notes.html'))
+});
+
+app.delete('/notes/:id', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public/notes.html'))
+});
+
+
+
 
 // Starts the server to begin listening
 // =============================================================
